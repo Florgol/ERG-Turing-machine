@@ -1,0 +1,53 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+
+
+}
+
+#dokBody {
+  font-family: 'Source Serif 4', sans-serif;
+}
+
+canvas {
+  display: block;
+}
+
+/*navigation bar*/
+
+header li {
+  display: inline-block;
+}
+
+header {
+  text-align: center;
+}
+
+nav {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 0 0;
+  margin: 0 0;
+  background-color: white;
+  font-family: 'Supermercado One', cursive;
+}
+
+nav li {
+  padding-right: 2vw;
+  padding-left: 2vw;
+}
+
+nav li a {
+  font-size: 0.9rem;
+}
+
+/*links*/
+a {
+  text-decoration: none;
+  color: #023e8a;
+}

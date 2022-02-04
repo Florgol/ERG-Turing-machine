@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- google font links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Supermercado+One&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@300&display=swap" rel="stylesheet"> 
+  </head>
+
+  <body id="dokBody">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Animation</a></li>
+                <li><a href="dokumentation.html">Dokumentation</a></li>
+            </ul>
+        </nav>
+  
+
+      </header>
+        <br>
+        <br>
+        <br>
+        <p>Technisch: 
+            
+            <br>
+            <br>
+            Ich habe das p5.js Framework für die Darstellung des Graphen, und des Turing Bandes verwendet
+        </p>
+        <p>Fachlich: 
+
+            <br>
+            <br>
+            Es soll die Gültigkeit einer Zeichenkette in Hinsicht auf die 
+            <a href= "https://willamette.edu/~gorr/classes/cs449/reber.html#top">Embedded Reber Grammar</a>, mit Hilfe einer 
+            <a href= "https://en.wikipedia.org/wiki/Turing_machine">Turingmaschine</a>, bestimmt werden
+            <br>
+            Ich habe das Programm in Teile in Form von Funktionen zerlegt
+            <br>
+            Ich dachte mir: "Es ist klar, dass ich ein paar Funktionen in jedem Fall benötige"
+            <br>
+            <br>
+            So z.B. drawGraph(x, y, cs, ns) - diese Funktion zeichnet einen Graphen am Punkt (x,y) auf der Canvas
+            <br>
+            Die Kante zwischen cs (current state) und ns (next state) wird farblich unterlegt
+            <br>
+            <br>
+            Hier ein Einblick in drawGraph() :
+            <br>
+            <br>
+            <img src="images/ZustandUndKanteGraph.png" alt="Teil der drawGraph Funktion">
+            <br>
+            <br>
+
+            Ein Zustand wird mit drawState() gezeichnet :
+            <br>
+            <br>
+            <img src="images/Zustand.png" alt="drawState Funktion">
+            <br>
+            <br>
+
+            Ich habe 8 Funktionen geschrieben um Pfeile in 8 verschiedene Richtungen zu zeichnen - hier eine:
+            <br>
+            <br>
+            <img src="images/Pfeil.png" alt="arrow Funktion Beispiel">
+            <br>
+            <br>
+
+            Ich habe mich dazu entschieden das Turing Band mit Lese- und Schreibkopf ebenfalls zu animieren
+            <br>
+            Ich denke es ist übersichtlicher als eine Tabelle
+            <br>
+            Mit drawCharArray() können wir das Turing Band zeichen:
+            <br>
+            <br>
+            <img src="images/TuringBand.png" alt="Turing Band zeichnen - Funktion">
+            <br>
+            <br>
+
+            Mit drawTuringArrow() den Schreib- und Lesekopf der Turingmaschine:
+            <br>
+            <br>
+            <img src="images/TuringPfeil.png" alt="Turing Schreib- und Lesekopf zeichnen - Funktion">
+            <br>
+            <br>
+
+            Ebenfalls benötigen wir eine Funktion, die uns die Logik vorgibt, also in welchen Zustand wir als nächstes wechseln
+            <br>
+            Und was der Turingkopf schreiben und in welche Richtung er sich bewegen soll
+            <br>
+            Mit nextStateMarkMove(state, bandPosition) können wir anhand von bandposition, das nächste Zeichen ermitteln
+            <br>
+            Dies zusammen mit dem jetzigen Zustand (state), liefert uns die benötigten Informationen:
+            <br>
+            <br>
+            <img src="images/Logik.png" alt="Snippet der Logik">
+            <br>
+            Falls kein Fall zutrifft gibt nextStateMarkMove() false zurück
+            <br>
+            <br>
+            <br>
+
+            Wir benötigen hier und da noch einige Hilfsfunktionen, z.B. für die Aufgabe den Turingkopf zu bewegen
+            <br>
+            Ich will hier aber nicht auf alle eingehen und komme schnell zu einer vereinfachten Version der Funktion, die die meisten Funktionen zusammenbringt
+            <br>
+            moveTuring() bewegt die Turing Maschine schrittweise:
+            <br>
+            <br>
+            <img src="images/moveTuring.png" alt="Snippet der Logik">
+            <br>
+            Falls uns nextStateMarkMove() einen nächsten Schritt zurückgibt, bewegen wir die Turingmaschine angemessen
+            <br>
+            Falls wir uns in Zustand 15, und damit in "qacc" befinden, wissen wir die Zeichenkette ist gültig und geben die entsprechende Nachricht aus
+            <br>            
+            <br>
+            <br>
+
+            Gibt uns nextStateMarkMove() false zurück, wissen wir der Zustand ist ungültig:
+            <br>
+            <br>
+            <img src="images/moveTuringElse.png" alt="Snippet der Logik">
+            <br>
+            <br>
+
+            <br>
+            Die einzelnen Teile wurden mit Funktionen und Buttons, Inputfenster verbunden, sodass wir die in der Aufgabe vorgegebenen Verarbeitungsmöglichkeiten erfüllen
+            <br>
+            <br>
+            
+
+        </p>
+
+
+  </body>
+</html>
