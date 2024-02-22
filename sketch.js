@@ -79,6 +79,7 @@ function setup() {
 
 function draw() {
 
+  //Hintergrund löschen um ungewünschtes Überzeichnen zu verhindern
   background(220);
   
   drawGraph(graphXPosition, graphYPosition, currentState, nextState);
