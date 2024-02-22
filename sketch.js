@@ -79,8 +79,11 @@ function setup() {
 
 function draw() {
 
+  background(220);
+  
   drawGraph(graphXPosition, graphYPosition, currentState, nextState);
   drawCharArray(inputString, turingBandXPosition, turingBandYPosition);
+  drawTuringArrow(turingArrowXPosition, turingArrowYPosition);
 
 }
 
@@ -168,7 +171,7 @@ function moveTuring(){
     //Moving the turing head, baseed on the logic in nextStateMarkMove()
     deleteTuringArrow(turingArrowXPosition, turingArrowYPosition);
     moveTuringArrow(move);
-    drawTuringArrow(turingArrowXPosition, turingArrowYPosition);
+
 
     //Writing on the Turing band, based on the logic in nextStateMarkMove()
     inputString[positionCharArray] = mark;
@@ -537,6 +540,8 @@ function nextStateMarkMove(state, bandPosition){
 //Die ausgewählte Kante ist grün unterlegt wie in den arrow-Funktionen definiert
 //x und y zeichnen den Graph an Position (x,y)
 function drawGraph(x, y, cs, ns) {
+
+
 
   //Zustand 1
   drawState(x+50, y+50, "1", (ns == "1"));
